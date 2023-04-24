@@ -101,7 +101,7 @@ def main():
 
     # Run Bellman-Ford Algorithm on the graph
     try:
-        bellman_ford_distances = bellman_ford(adj_matrix, start_index)
+        bellman_ford(adj_matrix, start_index)
     except ValueError as e:
         print(e)
         return
@@ -111,10 +111,12 @@ def main():
         print(f"Shortest path distance from {start_node} to {node}:")
         print(f"Dijkstra's Algorithm: {dijkstra_distances[index]}")
 
+    # Run bellman ford and print distances
     bellman_ford_distances = bellman_ford(adj_matrix, 0)
     print("\nBellman-Ford Algorithm: ")
     for node, dist in bellman_ford_distances.items():
         print(f"Node {node}: Distance from start node - {dist}")
+
 
 if __name__ == '__main__':
     main()
